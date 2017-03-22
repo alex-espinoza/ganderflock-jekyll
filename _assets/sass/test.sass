@@ -1,0 +1,414 @@
+@import "include-media"
+
+h1, h2
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif
+  letter-spacing: 2.5px
+
+#block-container
+  position: fixed
+  width: 100%
+  height: 100%
+  background-color: #ffffff
+  z-index: 2
+
+#block-container .block
+  position: absolute
+  width: 50%
+  height: 50%
+
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    background-color: #fff
+    opacity: 0
+    z-index: 3
+    transition: opacity 200ms
+    transition-delay: 700ms
+
+#block-container .block.top-left
+  top: 0
+  left: 0
+  border-right: 30px solid white
+  border-bottom: 30px solid white
+
+  .gif
+    position: relative
+    width: 100%
+    height: 100%
+
+  .gif::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(249, 223, 147, 0.25)
+    width: 100%
+    height: 100%
+    transition: background-color 500ms
+
+  .gif:hover::before
+    background-color: rgba(249, 223, 147, 0.5)
+
+#block-container.section-transition-top-left .block.top-left::after
+  transition: opacity 200ms
+  transition-delay: 0ms
+  opacity: 1
+
+#block-container.section-transition-top-right .block.top-left::after,
+#block-container.section-transition-bottom-left .block.top-left::after,
+#block-container.section-transition-bottom-right .block.top-left::after
+  transition: opacity 200ms
+  transition-delay: 400ms
+  opacity: 1
+
+#block-container .block.top-right
+  top: 0
+  right: 0
+  border-left: 30px solid white
+  border-bottom: 30px solid white
+
+  .gif
+    position: relative
+    width: 100%
+    height: 100%
+
+  .gif::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(167, 206, 151, 0.25)
+    width: 100%
+    height: 100%
+    transition: background-color 500ms
+
+  .gif:hover::before
+    background-color: rgba(167, 206, 151, 0.5)
+
+#block-container.section-transition-top-right .block.top-right::after
+  transition: opacity 200ms
+  transition-delay: 0ms
+  opacity: 1
+
+#block-container.section-transition-top-left .block.top-right::after,
+#block-container.section-transition-bottom-left .block.top-right::after,
+#block-container.section-transition-bottom-right .block.top-right::after
+  transition: opacity 200ms
+  transition-delay: 400ms
+  opacity: 1
+
+#block-container .block.bottom-left
+  bottom: 0
+  left: 0
+  border-right: 30px solid white
+  border-top: 30px solid white
+
+  .gif
+    position: relative
+    width: 100%
+    height: 100%
+
+  .gif::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(152, 200, 202, 0.25)
+    width: 100%
+    height: 100%
+    transition: background-color 500ms
+
+  .gif:hover::before
+    background-color: rgba(152, 200, 202, 0.5)
+
+#block-container.section-transition-bottom-left .block.bottom-left::after
+  transition: opacity 200ms
+  transition-delay: 0ms
+  opacity: 1
+
+#block-container.section-transition-top-left .block.bottom-left::after,
+#block-container.section-transition-top-right .block.bottom-left::after,
+#block-container.section-transition-bottom-right .block.bottom-left::after
+  transition: opacity 200ms
+  transition-delay: 400ms
+  opacity: 1
+
+#block-container .block.bottom-right
+  bottom: 0
+  right: 0
+  border-left: 30px solid white
+  border-top: 30px solid white
+
+  .gif
+    position: relative
+    width: 100%
+    height: 100%
+
+  .gif::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(217, 123, 144, 0.25)
+    width: 100%
+    height: 100%
+    transition: background-color 500ms
+
+  .gif:hover::before
+    background-color: rgba(217, 123, 144, 0.5)
+
+#block-container.section-transition-bottom-right .block.bottom-right::after
+  transition: opacity 200ms
+  transition-delay: 0ms
+  opacity: 1
+
+#block-container.section-transition-top-left .block.bottom-right::after,
+#block-container.section-transition-top-right .block.bottom-right::after,
+#block-container.section-transition-bottom-left .block.bottom-right::after
+  transition: opacity 200ms
+  transition-delay: 400ms
+  opacity: 1
+
+#block-container .block .gif video
+  width: 100%
+  height: auto
+
+#block-container .block h2
+  color: #fff
+  display: inline-block
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  pointer-events: none
+  font-size: 42px
+  opacity: 0
+  z-index: 3
+  transition: opacity 500ms
+
+#block-container .block .gif:hover + h2
+  opacity: 1
+
+#block-container.section-transition-top-left + #logo-container,
+#block-container.section-transition-top-right + #logo-container,
+#block-container.section-transition-bottom-left + #logo-container,
+#block-container.section-transition-bottom-right + #logo-container
+  opacity: 0
+  transition: opacity 200ms
+  transition-delay: 400ms
+
+#logo-container
+  position: fixed
+  width: 150px
+  height: 150px
+  background: asset_url('Ganderflock_Logo_300x300.png')
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  top: 46%
+  left: 48.5%
+  transform: translate(-50%, -50%)
+  pointer-events: none
+  opacity: 1
+  z-index: 3
+  transition: opacity 200ms
+  transition-delay: 700ms
+
+#web-design-section,
+#creative-section,
+#social-media-section,
+#team-section
+  visibility: hidden
+  position: fixed
+  width: 100%
+  height: 100%
+  opacity: 0
+  pointer-events: none
+  z-index: 2
+  overflow: hidden
+  transition: opacity 200ms, visibility 200ms, overflow 200ms
+  transition-delay: 700ms, 700ms, 700ms
+
+  &.active
+    visibility: visible
+    opacity: 1
+    pointer-events: auto
+    overflow-y: scroll
+    transition: opacity 200ms, visibility 200ms, overflow 200ms
+    transition-delay: 800ms, 800ms, 800ms
+
+#web-design-section .go-back-logo,
+#creative-section .go-back-logo,
+#social-media-section .go-back-logo,
+#team-section .go-back-logo
+  position: absolute
+  top: 10px
+  right: 20px
+  cursor: pointer
+  width: 40px
+  height: 40px
+  background: asset_url('Ganderflock_Logo_300x300.png')
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  z-index: 3
+  opacity: 0
+  transform: translateY(20px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 0ms, 0ms
+
+#web-design-section.active .go-back-logo,
+#creative-section.active .go-back-logo,
+#social-media-section.active .go-back-logo,
+#team-section.active .go-back-logo
+  opacity: 1
+  transform: translateY(0px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 1000ms, 1000ms
+
+#web-design-section .header,
+#creative-section .header,
+#social-media-section .header,
+#team-section .header
+  position: relative
+  padding: 20px 0 0 20px
+  z-index: 2
+
+  h1
+    color: #000
+    font-size: 72px
+    opacity: 0
+    transform: translateY(45px)
+    transition: transform 200ms, opacity 200ms
+    transition-delay: 100ms, 100ms
+
+#web-design-section.active .header,
+#creative-section.active .header,
+#social-media-section.active .header,
+#team-section.active .header
+  h1
+    opacity: 1
+    transform: translateY(25px)
+    transition: transform 200ms, opacity 200ms
+    transition-delay: 1100ms, 1100ms
+
+#web-design-section .hero-video,
+#creative-section .hero-video,
+#social-media-section .hero-video,
+#team-section .hero-video
+  position: relative
+  width: 100%
+  height: 400px
+  margin: 0 0 40px 0
+  background-image: asset_url('placeholder-header.png')
+  background-size: cover
+  background-position: 50% 40%
+  background-repeat: no-repeat
+  opacity: 0
+  transform: translateY(20px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 200ms, 200ms
+
+#web-design-section.active .hero-video,
+#creative-section.active .hero-video,
+#social-media-section.active .hero-video,
+#team-section.active .hero-video
+  opacity: 1
+  transform: translateY(0px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 1200ms, 1200ms
+
+#web-design-section .images-container,
+#creative-section .images-container,
+#social-media-section .images-container,
+#team-section .images-container
+  position: relative
+  width: 80%
+  min-height: 1000px
+  margin: 0 auto
+  opacity: 0
+  transform: translateY(20px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 300ms, 300ms
+
+  &:after // clearfix
+    content: ""
+    display: table
+    clear: both
+
+  .image
+    position: relative
+    float: left
+    width: 48%
+    height: auto
+    min-height: 500px
+    margin: 1%
+    background-image: asset_url('500x500.png')
+    background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
+
+  .image.one .overlay
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(249, 223, 147, 0.25)
+    width: 100%
+    height: 100%
+
+  .image.two .overlay
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(167, 206, 151, 0.25)
+    width: 100%
+    height: 100%
+
+  .image.three .overlay
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(152, 200, 202, 0.25)
+    width: 100%
+    height: 100%
+
+  .image.four .overlay
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(217, 123, 144, 0.25)
+    width: 100%
+    height: 100%
+
+#web-design-section.active .images-container,
+#creative-section.active .images-container,
+#social-media-section.active .images-container,
+#team-section.active .images-container
+  opacity: 1
+  transform: translateY(0px)
+  transition: transform 200ms, opacity 200ms
+  transition-delay: 1300ms, 1300ms
+
+#web-design-section .footer,
+#creative-section .footer,
+#social-media-section .footer,
+#team-section .footer
+  position: relative
+  width: 100%
+  background: #000
+
+  p
+    padding: 40px 20px
+    font-size: 20px
+    color: #fff
+
+// Media queries - http://include-media.com/
+
+// @include media("<tablet")
+//   #block-container
+//     width: 10%
