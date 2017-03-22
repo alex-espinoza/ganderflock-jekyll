@@ -11,7 +11,6 @@ ruby RUBY_VERSION
 # Happy Jekylling!
 
 gem "jekyll", "3.4.2"
-gem "minima", "~> 2.0"
 gem 'jekyll-assets', '2.2.8'
 gem 'uglifier', '3.1.9'
 gem 'sass', '3.4.23'
