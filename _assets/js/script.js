@@ -66,8 +66,9 @@ bottomLeftBlock.addEventListener("click", function() {
 });
 
 bottomRightBlock.addEventListener("click", function() {
-  blockContainer.classList.add("section-transition-bottom-right");
-  teamSection.classList.add("active");
+  // blockContainer.classList.add("section-transition-bottom-right");
+  // teamSection.classList.add("active");
+  window.location.href ="/blog"
 });
 
 goBackLogoElements.forEach(function(logoElement) {
@@ -75,7 +76,7 @@ goBackLogoElements.forEach(function(logoElement) {
     webDesignSection.classList.remove("active");
     creativeSection.classList.remove("active");
     socialMediaSection.classList.remove("active");
-    teamSection.classList.remove("active");
+    // teamSection.classList.remove("active");
     blockContainer.classList.remove("section-transition-top-right");
     blockContainer.classList.remove("section-transition-top-left");
     blockContainer.classList.remove("section-transition-bottom-left");
@@ -103,11 +104,11 @@ var socialMediaSectionImageTwoElement = document.querySelector("#social-media-se
 var socialMediaSectionImageThreeElement = document.querySelector("#social-media-section .images-container .image.three");
 var socialMediaSectionImageFourElement = document.querySelector("#social-media-section .images-container .image.four");
 
-var teamSectionHeroVideoElement = document.querySelector("#team-section .hero-video");
-var teamSectionImageOneElement = document.querySelector("#team-section .images-container .image.one");
-var teamSectionImageTwoElement = document.querySelector("#team-section .images-container .image.two");
-var teamSectionImageThreeElement = document.querySelector("#team-section .images-container .image.three");
-var teamSectionImageFourElement = document.querySelector("#team-section .images-container .image.four");
+// var teamSectionHeroVideoElement = document.querySelector("#team-section .hero-video");
+// var teamSectionImageOneElement = document.querySelector("#team-section .images-container .image.one");
+// var teamSectionImageTwoElement = document.querySelector("#team-section .images-container .image.two");
+// var teamSectionImageThreeElement = document.querySelector("#team-section .images-container .image.three");
+// var teamSectionImageFourElement = document.querySelector("#team-section .images-container .image.four");
 
 var webDesignSectionTweenTimeline = new TimelineMax();
 webDesignSectionTweenTimeline.add([
@@ -133,13 +134,13 @@ socialMediaSectionTweenTimeline.add([
   TweenMax.to(socialMediaSectionImageFourElement, 1, {y:-150}),
 ]);
 
-var teamSectionTweenTimeline = new TimelineMax();
-teamSectionTweenTimeline.add([
-  TweenMax.to(teamSectionImageOneElement, 1, {y:-200}),
-  TweenMax.to(teamSectionImageTwoElement, 1, {y:-150}),
-  TweenMax.to(teamSectionImageThreeElement, 1, {y:-200}),
-  TweenMax.to(teamSectionImageFourElement, 1, {y:-150}),
-]);
+// var teamSectionTweenTimeline = new TimelineMax();
+// teamSectionTweenTimeline.add([
+//   TweenMax.to(teamSectionImageOneElement, 1, {y:-200}),
+//   TweenMax.to(teamSectionImageTwoElement, 1, {y:-150}),
+//   TweenMax.to(teamSectionImageThreeElement, 1, {y:-200}),
+//   TweenMax.to(teamSectionImageFourElement, 1, {y:-150}),
+// ]);
 
 var controller = new ScrollMagic.Controller({
   globalSceneOptions: {
@@ -172,13 +173,13 @@ new ScrollMagic.Scene({
 // .addIndicators({name: "image parallax"})
 .addTo(controller);
 
-new ScrollMagic.Scene({
-  triggerElement: teamSectionHeroVideoElement,
-  duration: 700
-})
-.setTween(teamSectionTweenTimeline)
-// .addIndicators({name: "image parallax"})
-.addTo(controller);
+// new ScrollMagic.Scene({
+//   triggerElement: teamSectionHeroVideoElement,
+//   duration: 700
+// })
+// .setTween(teamSectionTweenTimeline)
+// // .addIndicators({name: "image parallax"})
+// .addTo(controller);
 
 // startButton.addEventListener("click", function() {
 //   startButton.addEventListener(transitionEndEvent, function() {
