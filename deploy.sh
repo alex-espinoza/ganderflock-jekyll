@@ -5,15 +5,17 @@
 # Usage:
 #   ./deploy.sh
 
-# Delete everything inside the _site folder
+# Delete everything inside the _site folder and caches
 rm -rf _site/*
+rm -rf .asset-cache
+rm -rf .sass-cache
 
 # Build jekyll static site
 JEKYLL_ENV=production bundle exec jekyll build
 
 # Remove the .html extension from all blog posts for pretty URLs
-for filename in ./_site/*.html; do
-    if [ "$filename" != "./_site/index.html" ] && [ "$filename" != "./_site/not-found.html" ]
+for filename in ./_site/blog/*.html; do
+    if [ "$filename" != "./_site/blog/index.html" ] && [ "$filename" != "./_site/blog/not-found.html" ]
     then
         original="$filename"
 
@@ -23,7 +25,7 @@ for filename in ./_site/*.html; do
         filename="${filename%.*}"
 
         # Move it
-        mv $original ./_site/$filename
+        mv $original ./_site/blog/$filename
     fi
 done
 
