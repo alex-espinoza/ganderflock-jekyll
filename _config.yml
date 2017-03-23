@@ -31,7 +31,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 # jekyll-assets settings
-autowrite: true
 digest: true
 assets:
   sources:
