@@ -40,7 +40,7 @@ var blockContainer = document.querySelector("#block-container");
 var topLeftBlock = document.querySelector("#block-container .block.top-left");
 var topRightBlock = document.querySelector("#block-container .block.top-right");
 var bottomLeftBlock = document.querySelector("#block-container .block.bottom-left");
-var bottomRightBlock = document.querySelector("#block-container .block.bottom-right");
+var bottomRightBlock = document.querySelector("#block-container .block.bottom-right .gif");
 var logoContainer = document.querySelector("#logo-container");
 var webDesignSection = document.querySelector("#web-design-section");
 var creativeSection = document.querySelector("#creative-section");
@@ -58,7 +58,7 @@ topLeftBlock.addEventListener("click", function() {
 topRightBlock.addEventListener("click", function() {
   blockContainer.classList.add("section-transition-top-right");
   creativeSection.classList.add("active");
-});
+}); 
 
 bottomLeftBlock.addEventListener("click", function() {
   blockContainer.classList.add("section-transition-bottom-left");
@@ -76,7 +76,7 @@ goBackLogoElements.forEach(function(logoElement) {
     webDesignSection.classList.remove("active");
     creativeSection.classList.remove("active");
     socialMediaSection.classList.remove("active");
-    // teamSection.classList.remove("active");
+    teamSection.classList.remove("active");
     blockContainer.classList.remove("section-transition-top-right");
     blockContainer.classList.remove("section-transition-top-left");
     blockContainer.classList.remove("section-transition-bottom-left");
