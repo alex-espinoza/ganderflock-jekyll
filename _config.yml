@@ -30,6 +30,9 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - deploy.sh
+  - s3_website.yml
+  - README.md
 # jekyll-assets settings
 digest: true
 assets:
